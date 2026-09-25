@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+@import '@fontsource/bentham';
+
+@theme {
+  --font-display: 'Bentham', serif;
+
+  --color-brand-orange: #b6410e;
+  --color-brand-orange-dark: #892a0a;
+  --color-brand-cream: #ffe7ca;
+  --color-brand-cream-light: #ffecd0;
+  --color-brand-yellow: #ffcf05;
+  --color-brand-ink: #1a1a1a;
+}
+
+body {
+  margin: 0;
+  background: var(--color-brand-cream);
+}
