@@ -1,24 +1,16 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Collections from './components/Collections'
-import BestSellers from './components/BestSellers'
-import Story from './components/Story'
-import PetsDeals from './components/PetsDeals'
-import PromoBanner from './components/PromoBanner'
-import Footer from './components/Footer'
+import { Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import ProductPage from './pages/ProductPage'
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <Collections />
-      <BestSellers />
-      <Story />
-      <PetsDeals />
-      <PromoBanner />
-      <Footer />
-    </>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="products/:slug" element={<ProductPage />} />
+      </Route>
+    </Routes>
   )
 }
 

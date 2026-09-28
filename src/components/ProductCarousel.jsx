@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { ArrowLeft01Icon, ArrowRight01Icon, Add01Icon } from '@hugeicons/core-free-icons'
 
@@ -56,25 +57,29 @@ function ProductCarousel({ heading, products }) {
           >
             {products.map((product, index) => (
               <article
-                key={`${product.title}-${index}`}
-                className="w-64 flex-none snap-start rounded-2xl bg-white shadow-sm md:w-72"
+                key={`${product.slug}-${index}`}
+                className="relative w-64 flex-none snap-start rounded-2xl bg-white shadow-sm md:w-72"
               >
-                <div className="flex aspect-square items-center justify-center rounded-t-2xl bg-neutral-100 p-6">
-                  <span className="text-center text-sm text-brand-ink/40">{product.placeholder}</span>
-                </div>
-                <div className="relative p-5">
-                  <h3 className="pr-10 font-display text-base leading-snug text-brand-ink">
-                    {product.title}
-                  </h3>
-                  <p className="mt-2 font-display text-brand-ink/70">{product.price}</p>
-                  <button
-                    type="button"
-                    aria-label={`Add ${product.title} to cart`}
-                    className="absolute right-5 bottom-5 flex size-8 items-center justify-center rounded-full bg-brand-ink text-white hover:opacity-80"
-                  >
-                    <HugeiconsIcon icon={Add01Icon} size={16} />
-                  </button>
-                </div>
+                <Link to={`/products/${product.slug}`}>
+                  <div className="flex aspect-square items-center justify-center rounded-t-2xl bg-neutral-100 p-6">
+                    <span className="text-center text-sm text-brand-ink/40">
+                      {product.placeholder}
+                    </span>
+                  </div>
+                  <div className="p-5 pr-16">
+                    <h3 className="font-display text-base leading-snug text-brand-ink">
+                      {product.title}
+                    </h3>
+                    <p className="mt-2 font-display text-brand-ink/70">{product.price}</p>
+                  </div>
+                </Link>
+                <button
+                  type="button"
+                  aria-label={`Add ${product.title} to cart`}
+                  className="absolute right-5 bottom-5 flex size-8 items-center justify-center rounded-full bg-brand-ink text-white hover:opacity-80"
+                >
+                  <HugeiconsIcon icon={Add01Icon} size={16} />
+                </button>
               </article>
             ))}
           </div>
