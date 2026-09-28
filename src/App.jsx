@@ -5,6 +5,7 @@ import BestSellers from './components/BestSellers'
 import Story from './components/Story'
 import PetsDeals from './components/PetsDeals'
 import PromoBanner from './components/PromoBanner'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Story />
       <PetsDeals />
       <PromoBanner />
+      <Footer />
     </>
   )
 }
