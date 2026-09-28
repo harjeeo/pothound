@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import Collections from './components/Collections'
 import BestSellers from './components/BestSellers'
 import Story from './components/Story'
+import PetsDeals from './components/PetsDeals'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Collections />
       <BestSellers />
       <Story />
+      <PetsDeals />
     </>
   )
 }
